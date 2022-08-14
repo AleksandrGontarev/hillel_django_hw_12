@@ -1,0 +1,9 @@
+<h1>{{ object.name }}</h1>
+<p>age - {{ object.age }}</p>
+<h3>
+       <a href="{% url 'book_store:author-update' author.pk%}"> <p>update</p></a>
+        <a href="{% url 'book_store:author-delete' author.pk%}"> <p>delete</p></a>
+
+
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h3>

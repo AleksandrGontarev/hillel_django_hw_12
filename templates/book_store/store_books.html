@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+{% for store in stores%}
+    <a href="{% url 'book_store:store' %}">{{ store.name }}</a>
+    <ul>
+        {% for books in store.books %}
+            <p>name: {{ books.name }}, price: {{ books.price }}, rating: {{ books.rating }}</p>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</ul>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

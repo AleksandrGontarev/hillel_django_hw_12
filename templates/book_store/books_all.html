@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h3><a href="{% url 'book_store:books' %}"> Books </a></h3>
+<ul>
+    {% for i in books %}
+        <a href="{% url 'book_store:books_one' i.id%}"> <p>{{ i.name }}</p></a>
+    {% endfor %}
+</ul>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

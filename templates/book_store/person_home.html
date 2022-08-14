@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person home</title>
+</head>
+<body>
+{% if messages %}
+    {% for message in messages%}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+<p>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</p>
+</body>
+</html>

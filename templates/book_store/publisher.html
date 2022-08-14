@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>All publishers - {{ pub_count }} </h4>
+<ul>
+    <p>publishers of books</p>
+    {% for pub in pubs %}
+        <ul><a href="{% url 'book_store:publisher_book' pub.publisher.id %}">{{ pub.publisher.name }}</a></ul>
+    {% endfor %}
+</ul>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>what books have been published</p>
+    <ul>{% for j in a %}
+        {{ j }}
+        <p></p>
+    {% endfor %}
+
+        {% for i in books%}
+            <ul><a href="{% url 'book_store:publisher'%}">{{ i.name }}</a></ul>
+            <p></p>
+        {% endfor %}
+    </ul>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

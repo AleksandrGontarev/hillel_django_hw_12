@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for i in pop %}
+        <p>
+            <a href="{% url 'book_store:store_books' i.id %}">{{ i.name }} -- {{ i.number_of_books}} books, average price book-- {{ i.average_price }}</a>
+        </p>
+    {% endfor %}
+</ul>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

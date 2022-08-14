@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p>all authors - {{ author }}</p>
+<p>
+    <a href="{% url 'book_store:author_book' young_author.age__min%}">young author - {{ young_author.age__min }} age</a>
+</p>
+<h5>
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h5>
+</body>
+</html>

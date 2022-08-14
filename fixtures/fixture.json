@@ -1,0 +1,273 @@
+[
+{
+    "model": "book_store.author",
+    "pk": 16,
+    "fields": {
+        "name": "Selby Wynn Schwartz",
+        "age": 26
+    }
+},
+{
+    "model": "book_store.author",
+    "pk": 17,
+    "fields": {
+        "name": "Virginia Garcia",
+        "age": 35
+    }
+},
+{
+    "model": "book_store.author",
+    "pk": 18,
+    "fields": {
+        "name": "Evelyn Landry",
+        "age": 64
+    }
+},
+{
+    "model": "book_store.author",
+    "pk": 19,
+    "fields": {
+        "name": "Cathy Brown",
+        "age": 43
+    }
+},
+{
+    "model": "book_store.author",
+    "pk": 20,
+    "fields": {
+        "name": "Andrea Johnson",
+        "age": 40
+    }
+},
+{
+    "model": "book_store.author",
+    "pk": 21,
+    "fields": {
+        "name": "Lori Dominguez",
+        "age": 57
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 16,
+    "fields": {
+        "name": "mgm"
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 17,
+    "fields": {
+        "name": "Jones-Kim"
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 18,
+    "fields": {
+        "name": "Johnson LLC"
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 19,
+    "fields": {
+        "name": "Martinez-Franco"
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 20,
+    "fields": {
+        "name": "Hensley, Mullen and Eaton"
+    }
+},
+{
+    "model": "book_store.publisher",
+    "pk": 21,
+    "fields": {
+        "name": "Arnold, Turner and Munoz"
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 5,
+    "fields": {
+        "name": "The One After Mars",
+        "pages": 200,
+        "price": "25.00",
+        "rating": 8.0,
+        "publisher": 16,
+        "pubdate": "2022-07-04",
+        "authors": [
+            16
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 6,
+    "fields": {
+        "name": "Soulless Dead",
+        "pages": 350,
+        "price": "100.00",
+        "rating": 7.0,
+        "publisher": 17,
+        "pubdate": "2022-03-16",
+        "authors": [
+            17
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 7,
+    "fields": {
+        "name": "Wild Heart",
+        "pages": 400,
+        "price": "124.00",
+        "rating": 7.0,
+        "publisher": 20,
+        "pubdate": "2022-01-06",
+        "authors": [
+            18,
+            19,
+            20
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 8,
+    "fields": {
+        "name": "See Zombie and Run",
+        "pages": 200,
+        "price": "50.00",
+        "rating": 5.0,
+        "publisher": 19,
+        "pubdate": "2022-07-03",
+        "authors": [
+            19
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 9,
+    "fields": {
+        "name": "Season For Revenge",
+        "pages": 600,
+        "price": "250.00",
+        "rating": 9.0,
+        "publisher": 20,
+        "pubdate": "2022-07-10",
+        "authors": [
+            16,
+            20,
+            21
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 11,
+    "fields": {
+        "name": "Wild Heart 2",
+        "pages": 400,
+        "price": "385.00",
+        "rating": 7.0,
+        "publisher": 16,
+        "pubdate": "2022-07-01",
+        "authors": [
+            18
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 12,
+    "fields": {
+        "name": "After Sappho",
+        "pages": 400,
+        "price": "140.00",
+        "rating": 8.0,
+        "publisher": 17,
+        "pubdate": "2022-07-13",
+        "authors": [
+            19
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 13,
+    "fields": {
+        "name": "Trust",
+        "pages": 1000,
+        "price": "500.00",
+        "rating": 9.0,
+        "publisher": 17,
+        "pubdate": "2022-07-07",
+        "authors": [
+            21
+        ]
+    }
+},
+{
+    "model": "book_store.book",
+    "pk": 14,
+    "fields": {
+        "name": "The Colony",
+        "pages": 350,
+        "price": "278.00",
+        "rating": 7.0,
+        "publisher": 16,
+        "pubdate": "2022-07-09",
+        "authors": [
+            19
+        ]
+    }
+},
+{
+    "model": "book_store.store",
+    "pk": 6,
+    "fields": {
+        "name": "Knygkova khata",
+        "books": [
+            5,
+            6,
+            7,
+            11,
+            13
+        ]
+    }
+},
+{
+    "model": "book_store.store",
+    "pk": 7,
+    "fields": {
+        "name": "bukva.ua",
+        "books": [
+            6,
+            8,
+            9,
+            12
+        ]
+    }
+},
+{
+    "model": "book_store.store",
+    "pk": 8,
+    "fields": {
+        "name": "kniga",
+        "books": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            14
+        ]
+    }
+}
+]
