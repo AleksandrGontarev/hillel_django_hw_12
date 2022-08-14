@@ -2,7 +2,7 @@ from book_store.models import Author, Book, Publisher, Store
 
 from django.db.models import Avg, Count, Min
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.edit import CreateView
 
 
@@ -47,7 +47,6 @@ def publisher_book(request, publisher_id):
 def author(request):
     authors_count = Author.objects.prefetch_related('authors').count()
     young_author = Author.objects.all().aggregate(Min('age'))
-
 
     return render(
         request,
@@ -222,7 +221,3 @@ class PublisherDelete(DeleteView):
     success_url = reverse_lazy("book_store:publisher-list")
     success_message = 'Publisher Delete Successfully'
     template_name = "book_store/publisher_delete.html"
-
-
-
-
