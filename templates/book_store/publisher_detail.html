@@ -1,0 +1,8 @@
+<h1>{{ object.name }}</h1>
+<h3>
+       <a href="{% url 'book_store:publisher-update' publisher.pk%}"> <p>update</p></a>
+        <a href="{% url 'book_store:publisher-delete' publisher.pk%}"> <p>delete</p></a>
+
+
+    <a href="{% url 'book_store:index'%}"> Home </a>
+</h3>

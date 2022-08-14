@@ -1,0 +1,8 @@
+<h1>Delete Publisher</h1>
+
+<p>Are you sure you want to delete the publisher: {{ publisher }}?</p>
+
+<form action="" method="POST">
+{% csrf_token %}
+<input type="submit" value="Yes, delete."/>
+</form>

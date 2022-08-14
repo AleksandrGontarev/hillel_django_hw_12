@@ -6,20 +6,21 @@
 </head>
 <body>
     <table>
-
         <p><a href="{% url 'book_store:author'%}">Author</a></p>
         <p><a href="{% url 'book_store:books' %}"> Books </a></p>
         <p><a href="{% url 'book_store:publisher'%}">Publisher</a></p>
         <p><a href="{% url 'book_store:store' %}">Store</a></p>
-{#        <p><a href="{% url 'reminder:reminder' %}">Reminder</a></p>#}
-
-{#        <p><a href="{% url 'book_store:example' %}">Example</a></p>#}
+    </table>
+    <table>
         <p><a href="{% url 'book_store:author-list'%}">Author Detail</a></p>
         <p><a href="{% url 'book_store:author-list'%}">Authors List</a></p>
         <p><a href="{% url 'book_store:author-create' %}">Author Create</a></p>
         <p><a href="{% url 'book_store:author-list'%}">Author Update</a></p>
         <p><a href="{% url 'book_store:author-list'%}">Author Delete</a></p>
-
     </table>
+        <p><a href="{% url 'book_store:publisher-list'%}">Publisher list</a></p>
+
+<p><a href="{% url 'admin:index' %}">Admin</a></p>
+
 </body>
 </html>
