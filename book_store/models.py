@@ -19,6 +19,9 @@ class Publisher(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('book_store:publisher-detail', args=[str(self.pk)])
+
 
 class Book(models.Model):
     name = models.CharField(max_length=300)
