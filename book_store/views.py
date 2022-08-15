@@ -157,7 +157,7 @@ class AuthorDetailView(DetailView):
 
 class AuthorListView(ListView):
     model = Author
-    paginate_by = 5
+    paginate_by = 10
     ordering = ['name']
 
 
@@ -193,7 +193,7 @@ class PublisherDetailView(DetailView):
 
 class PublisherListView(ListView):
     model = Publisher
-    paginate_by = 5
+    paginate_by = 10
     ordering = ['name']
 
 
