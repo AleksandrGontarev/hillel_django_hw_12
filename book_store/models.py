@@ -33,7 +33,10 @@ class Book(models.Model):
     pubdate = models.DateField()
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
+
+    def get_absolute_url(self):
+        return reverse('book_store:book-detail', args=[str(self.id)])
 
 
 class Store(models.Model):

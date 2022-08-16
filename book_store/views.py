@@ -5,10 +5,11 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.edit import CreateView
 
-
 from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.list import MultipleObjectMixin
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -151,8 +152,14 @@ def store_books(request, store_id):
     )
 
 
-class AuthorDetailView(DetailView):
+class AuthorDetailView(DetailView, MultipleObjectMixin):
     model = Author
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        object_list = Book.objects.filter(authors=self.get_object())
+        context = super(AuthorDetailView, self).get_context_data(object_list=object_list, **kwargs)
+        return context
 
 
 class AuthorListView(ListView):
@@ -165,22 +172,14 @@ class AuthorCreateView(LoginRequiredMixin, CreateView):
     model = Author
     fields = ['name', 'age']
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
 
-
-class AuthorUpdate(LoginRequiredMixin, UpdateView):
+class AuthorUpdateView(LoginRequiredMixin, UpdateView):
     model = Author
     fields = ['name', 'age']
     template_name = "book_store/author_update.html"
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
 
-
-class AuthorDelete(LoginRequiredMixin, DeleteView):
+class AuthorDeleteView(LoginRequiredMixin, DeleteView):
     model = Author
     success_url = reverse_lazy("book_store:author-list")
     success_message = 'Author Delete Successfully'
@@ -201,23 +200,44 @@ class PublisherCreateView(CreateView):
     model = Publisher
     fields = ['name']
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
 
-
-class PublisherUpdate(UpdateView):
+class PublisherUpdateView(UpdateView):
     model = Publisher
     fields = ['name']
     template_name = "book_store/publisher_update.html"
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
 
-
-class PublisherDelete(DeleteView):
+class PublisherDeleteView(DeleteView):
     model = Publisher
     success_url = reverse_lazy("book_store:publisher-list")
     success_message = 'Publisher Delete Successfully'
     template_name = "book_store/publisher_delete.html"
+
+
+class BooksDetailView(DetailView):
+    model = Book
+
+
+class BookListView(ListView):
+    model = Book
+    paginate_by = 50
+    ordering = ['name']
+    queryset = Book.objects.select_related("authors")
+
+
+class BooksCreateView(CreateView):
+    model = Book
+    fields = ['name', 'pages', 'price', 'rating', 'authors', 'publisher', 'pubdate']
+
+
+class BooksUpdateView(UpdateView):
+    model = Book
+    fields = ['name']
+    template_name = "book_store/publisher_update.html"
+
+
+class BooksDeleteView(DeleteView):
+    model = Book
+    success_url = reverse_lazy("book_store:book-list")
+    success_message = 'Book Delete Successfully'
+    template_name = "book_store/book_delete.html"

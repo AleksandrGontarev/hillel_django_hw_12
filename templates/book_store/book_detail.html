@@ -1,0 +1,20 @@
+{% extends 'book_store/base.html' %}
+{% block content %}
+
+    <h1>{{ object.name }}</h1>
+    <h3>Pages: {{ object.pages }}</h3>
+    <h3>Price: {{ object.price }}</h3>
+    <h3>Rating: {{ object.rating }}</h3>
+    <h3>Authors:</h3>
+    <ul>
+    {% for author in object.authors.all %}
+        <li>{{ author }}</li>
+    {% endfor %}
+    </ul>
+    <h3>Publisher: {{ object.publisher }}</h3>
+    <h3>Pubdate: {{ object.pubdate }}</h3>
+<h3>
+       <a href="{% url 'book_store:book-update' book.pk%}"> <p>update</p></a>
+        <a href="{% url 'book_store:book-delete' book.pk%}"> <p>delete</p></a>
+</h3>
+{% endblock %}

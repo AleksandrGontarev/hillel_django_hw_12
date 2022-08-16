@@ -1,0 +1,14 @@
+{% extends 'book_store/base.html' %}
+{% block content %}
+<h1>Books</h1>
+<ul>
+    {% for book in object_list %}
+        <li>
+            <a href="{% url 'book_store:book-detail' book.pk%}"> <p>{{ book.name }}</p></a>
+        </li>
+    {% endfor %}
+</ul>
+<h5>
+    <p><a href="{% url 'book_store:book-create' %}">Book Create</a></p>
+</h5>
+{% endblock %}

@@ -1,9 +1,19 @@
+{% extends 'book_store/base.html'%}
+{% block content %}
 <h1>{{ object.name }}</h1>
+    <p>Number of books: {{ author.book_set.all.count}}</p>
 <p>age - {{ object.age }}</p>
-<h3>
-       <a href="{% url 'book_store:author-update' author.pk%}"> <p>update</p></a>
+    <a href="{% url 'book_store:author-update' author.pk%}"> <p>update</p></a>
         <a href="{% url 'book_store:author-delete' author.pk%}"> <p>delete</p></a>
-
-
-    <a href="{% url 'book_store:index'%}"> Home </a>
+    <h1>Books:</h1>
+    <ul>
+    {% for book in object_list %}
+        <li>
+            <a href="{{ book.get_absolute_url }}">{{ book.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+<h3>
 </h3>
+{% endblock %}
+
