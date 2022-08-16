@@ -39,7 +39,7 @@ class BooksAdmin(admin.ModelAdmin):
             'fields': ('pubdate',)
         }),
     )
-    list_filter = ['rating', 'pubdate',]
+    list_filter = ['rating', 'pubdate']
     search_fields = ['name', 'rating']
 
 
