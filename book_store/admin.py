@@ -39,7 +39,7 @@ class BooksAdmin(admin.ModelAdmin):
             'fields': ('pubdate',)
         }),
     )
-    list_filter = ['rating', 'price']
+    list_filter = ['rating', 'pubdate',]
     search_fields = ['name', 'rating']
 
 
@@ -47,7 +47,7 @@ class BooksAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('name',)
     inlines = [BooksInline]
-    list_filter = ['age', ]
+    list_filter = ['age', 'book']
 
 
 @admin.register(Store)

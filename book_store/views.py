@@ -9,7 +9,6 @@ from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import MultipleObjectMixin
-from django.core.paginator import Paginator
 
 
 def index(request):
@@ -222,7 +221,7 @@ class BookListView(ListView):
     model = Book
     paginate_by = 50
     ordering = ['name']
-    queryset = Book.objects.select_related("authors")
+    queryset = Book.objects.select_related("publisher")
 
 
 class BooksCreateView(CreateView):
