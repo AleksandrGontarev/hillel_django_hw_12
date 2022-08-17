@@ -8,7 +8,6 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.list import MultipleObjectMixin
 
 
 def index(request):
@@ -151,7 +150,7 @@ def store_books(request, store_id):
     )
 
 
-class AuthorDetailView(DetailView, MultipleObjectMixin):
+class AuthorDetailView(DetailView):
     model = Author
     paginate_by = 10
 
